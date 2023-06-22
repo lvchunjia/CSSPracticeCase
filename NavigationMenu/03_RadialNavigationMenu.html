@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radial Navigation Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: #ebf5fc;
+        overflow: hidden;
+      }
+
+      .toggle {
+        background: rgb(0, 191, 255);
+        width: 5.2em;
+        height: 5.2em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 50%;
+
+        transition: 0.3s;
+      }
+
+      .toggle:hover {
+        transition: 0.3s;
+        transform: scale(1.1);
+      }
+
+      .toggle i {
+        font-size: 4em;
+        color: white;
+        display: block;
+        margin-top: 10px;
+        transition: 0.3s;
+      }
+
+      .menu {
+        background: #ebf5fc;
+        height: 6.2em;
+        width: 6.2em;
+        border-radius: 50%;
+        transform: scale(0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -2;
+        transition: 0.7s;
+        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+          3px 3px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu a {
+        display: flex;
+        position: absolute;
+        font-size: 0.8em;
+        color: #222;
+        transition: 0.4s;
+        text-decoration: none;
+      }
+
+      .menu i {
+        font-size: 0.7em;
+      }
+
+      .menu a:nth-child(1) {
+        top: 14px;
+        left: 45px;
+      }
+
+      .menu a:nth-child(2) {
+        top: 28px;
+        left: 72px;
+      }
+
+      .menu a:nth-child(3) {
+        top: 56px;
+        left: 71px;
+      }
+
+      .menu a:nth-child(4) {
+        top: 76px;
+        left: 45px;
+      }
+
+      .menu a:nth-child(5) {
+        top: 57px;
+        left: 15px;
+      }
+
+      .menu a:nth-child(6) {
+        top: 29px;
+        left: 15px;
+      }
+
+      .menu a:hover {
+        color: #ffa500;
+        transition: 0.2s;
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="toggle" id="toggle" onclick="menu-expand()">
+      <i class="fas fa-plus" id="plus"></i>
+    </div>
+    <div class="menu" id="menu">
+      <a href="">
+        <i class="fas fa-camera"></i>
+      </a>
+
+      <a href="">
+        <i class="fas fa-video"></i>
+      </a>
+
+      <a href="">
+        <i class="fas fa-phone-volume"></i>
+      </a>
+
+      <a href="">
+        <i class="fas fa-volume-up"></i>
+      </a>
+
+      <a href="">
+        <i class="fas fa-clock"></i>
+      </a>
+
+      <a href="">
+        <i class="fas fa-address-book"></i>
+      </a>
+    </div>
+
+    <script>
+      var i = 0;
+      function expand() {
+        if (i == 0) {
+          document.getElementById("menu").style.transform = "scale(4)";
+          document.getElementById("plus").style.transform = "rotate(137deg)";
+          i = 1;
+        } else {
+          document.getElementById("menu").style.transform = "scale(0)";
+          document.getElementById("plus").style.transform = "rotate(0deg)";
+          i = 0;
+        }
+      }
+    </script>
+  </body>
+</html>
